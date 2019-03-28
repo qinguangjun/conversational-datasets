@@ -218,6 +218,14 @@ class VectorMappingMethod(method.BaselineMethod):
         Uses a learned mapping on the response side.
         """
         with tf.variable_scope("compute_similarities", reuse=(not is_train)):
+            scaling_factor = tf.nn.softplus(
+                tf.get_variable(
+                    "scaling_factor", dtype=tf.float32, shape=[],
+                    initializer=tf.constant_initializer(1.0)))
+            context_encodings = tf.nn.l2_normalize(context_encodings, 1)
+            context_encodings *= scaling_factor
+            response_encodings = tf.nn.l2_normalize(response_encodings, 1)
+            response_encodings *= scaling_factor
             encoding_dim = int(context_encodings.shape[1])
             mapping_weights = tf.get_variable(
                 "mapping_weights",
