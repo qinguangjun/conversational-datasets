@@ -101,7 +101,7 @@ class VectorMappingMethod(method.BaselineMethod):
     def __init__(
         self,
         encoder,
-        learning_rates=(10.0, 3.0, 1.0, 0.3, 0.1, 0.03, 0.01),
+        learning_rates=(10.0, 3.0, 1.0, 0.3),
         regularizers=(0, 0.1, 0.01, 0.001),
     ):
         """Create a new `VectorMappingMethod` object."""
@@ -218,14 +218,10 @@ class VectorMappingMethod(method.BaselineMethod):
         Uses a learned mapping on the response side.
         """
         with tf.variable_scope("compute_similarities", reuse=(not is_train)):
-            scaling_factor = tf.nn.softplus(
-                tf.get_variable(
-                    "scaling_factor", dtype=tf.float32, shape=[],
-                    initializer=tf.constant_initializer(1.0)))
+            # Normalise the vectors so that the model is not dependent on
+            # vector scaling.
             context_encodings = tf.nn.l2_normalize(context_encodings, 1)
-            context_encodings *= scaling_factor
             response_encodings = tf.nn.l2_normalize(response_encodings, 1)
-            response_encodings *= scaling_factor
             encoding_dim = int(context_encodings.shape[1])
             mapping_weights = tf.get_variable(
                 "mapping_weights",
