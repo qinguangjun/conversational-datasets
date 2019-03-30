@@ -60,4 +60,4 @@ These are results on the data from 2015 to 2018 inclusive, i.e. the dataset used
 | ELMO_MAP         | 35.5%             	|
 | **Other models** |                    |
 | Encoder model **citation**  REDDIT-DIRECT	  | 61.4%             	|
-| Encoder model **citation**  FT-DIRECT	  | XX.X%             	|
+| Encoder model **citation**  FT-DIRECT	  | 84.2%             	|
