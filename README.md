@@ -60,14 +60,14 @@ The [`tools/tfrutil.py`](tools/tfrutil.py) and [`baselines/run_baseline.py`](bas
 
 You can use [`tools/tfrutil.py`](tools/tfrutil.py) to compute the number of examples in a tensorflow record file:
 
-```bash
+```
 $ python tools/tfrutil.py size data/reddit-test
 726158
 ```
 
 It can also be used to display the examples in a readable format:
 
-```bash
+```
 $ python tools/tfrutil.py pp data/reddit-test
 
 Example 0
