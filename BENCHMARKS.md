@@ -44,6 +44,7 @@ These are results on the data from 2015 to 2018 inclusive, i.e. the dataset used
 | **Other models** |                    |
 | PolyAI-Encoder [1]	  | 30.6%             	|
 
+
 ## AmazonQA
 
 |         	       | 1-of-100 accuracy 	|
@@ -60,6 +61,7 @@ These are results on the data from 2015 to 2018 inclusive, i.e. the dataset used
 | **Other models** |                    |
 | PolyAI-Encoder [1]	  | 84.2%             	|
 
+
 # References
 
-[1] TODO
+[1] [A Repository of Conversational Datasets](https://arxiv.org/abs/1904.06472). Henderson et al. arXiv pre-print 2019.
