@@ -252,7 +252,7 @@ The following papers use the 1-of-100 ranking accuracy in particular:
 
 ## Citations
 
-When using these datasets in your work, please cite:
+When using these datasets in your work, please cite our paper, [A Repository of Conversational Datasets](https://arxiv.org/abs/1904.06472):
 
 ```bibtex
 @Article{Henderson2019,
